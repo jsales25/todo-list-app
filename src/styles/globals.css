@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/josefin-sans-400.woff2") format(woff2);
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/josefin-sans-700.woff2") format(woff2);
+}
+
+@theme {
+  /* ===Primary Colors=== */
+  --color-check-background-start: hsl(192, 100%, 67%);
+  --color-check-background-end: hsl(280, 87%, 65%);
+  --color-bright-blue: hsl(220, 98%, 61%);
+
+  /* ===Light Theme=== */
+  --color-neutral-very-light-gray: hsl(0, 0%, 98%);
+  --color-neutral-very-light-grayish-blue: hsl(236, 33%, 92%);
+  --color-neutral-light-grayish-blue: hsl(233, 11%, 84%);
+  --color-neutral-dark-grayish-blue: hsl(236, 9%, 61%);
+  --color-neutral-very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+  
+
+  /* ===Dark Theme=== */
+  --color-neutral-very-dark-blue: hsl(235, 21%, 11%);
+  --color-neutral-very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --color-neutral-light-grayish-blue: hsl(234, 39%, 85%);
+  --color-neutral-light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --color-neutral-dark-purple-600: hsl(235, 16%, 43%);
+  --color-neutral-dark-grayish-blue: hsl(234, 11%, 52%);
+  --color-neutral-very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --color-neutral-very-dark-grayish-blue-alt: hsl(237, 14%, 26%);
+
+  /* ===Fonts=== */
+  --font-primary: "Josefin Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-primary);
+}
+
+@layer base {
+  .theme-light {
+    @apply bg-[url('/images/bg-desktop-light.jpg')] bg-cover bg-no-repeat bg-center h-80;
+  }
+  .theme-dark {
+    @apply bg-[url('/images/bg-desktop-dark.jpg')] bg-cover bg-no-repeat bg-center h-80;
+  }
+}
