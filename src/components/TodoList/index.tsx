@@ -68,7 +68,7 @@ const TodoList = ({
                 onClick={() => removeTodo(todo.id)}
                 className="ml-auto cursor-pointer">
 
-                  <img src="/images/icon-cross.svg" alt="remover tarefa" />
+                  <img src="./images/icon-cross.svg" alt="remover tarefa" />
 
                 </button>
               </div>
