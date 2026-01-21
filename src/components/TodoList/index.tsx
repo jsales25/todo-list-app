@@ -79,7 +79,7 @@ const TodoList = ({
         <div
           className={`text-sm flex justify-between p-4 ${themeConfig[theme].layout.textColor}`}
         >
-          <p>{todoList.length} items total</p>
+          <p>{todoList.length} items left</p>
 
           <div className="hidden sm:flex gap-4">
             <button
