@@ -10,6 +10,15 @@ Um aplicativo de lista de tarefas simples, construído com React, TypeScript e T
 *   Alternar entre os temas claro e escuro
 *   Filtrar tarefas por "Todas", "Ativas" e "Concluídas"
 
+### 📷 Screenshot
+
+![Design do projeto](./src/design/desktop-design.png)
+
+### 🔗 Links
+
+- Solução no Repositório: [Acesse o repositório aqui](https://github.com/jsales25/todo-list-app.git)
+- Live Site: [Acesse o site aqui](https://jsales25.github.io/todo-list-app/)
+
 ## Tecnologias Utilizadas
 
 *   **React:** Uma biblioteca JavaScript para construir interfaces de usuário.
@@ -61,3 +70,17 @@ src/
 |-- App.tsx          # Componente principal da aplicação
 |-- main.tsx         # Ponto de entrada da aplicação
 ```
+
+## 👩‍💻 Autor
+
+**Julia Sales**
+
+- **GitHub:** [Acesse o GitHub da autora aqui](https://github.com/jsales25)
+- **Frontend Mentor:** [Acesse o Frontend Mentor da autora aqui](https://www.frontendmentor.io/profile/jsales25)
+- **LinkedIn:** [Acesse o LinkedIn da autora aqui](https://www.linkedin.com/in/julia-sales-developer/)
+
+---
+
+<div align="center">
+  Feito com 💜 por Julia Sales
+</div>
