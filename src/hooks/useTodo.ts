@@ -10,7 +10,7 @@ export const useTodo = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
 
-  // Carregar tarefas do servidor ao abrir a página
+  // Carrega as tarefas do servidor ao abrir a página
   useEffect(() => {
     fetch("http://localhost:3000/todos")
       .then((res) => res.json())
@@ -18,26 +18,39 @@ export const useTodo = () => {
       .catch((err) => console.error("Erro ao carregar tarefas:", err));
   }, []);
 
-  // Enviar para o servidor via POST
+  // Envia para o servidor via POST
   const addTodo = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
+    // GUARDA O FORMULÁRIO AQUI (antes do await)
+    const form = event.currentTarget;
+
+    const formData = new FormData(form);
     const todoItem = formData.get("todo") as string;
 
     if (!todoItem.trim()) return;
 
-    const resposta = await fetch("http://localhost:3000/todos", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: todoItem }),
-    });
+    try {
+      // Pede para o servidor criar a tarefa
+      const resposta = await fetch("http://localhost:3000/todos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: todoItem }),
+      });
 
-    const novaTarefaNoServidor = await resposta.json();
-    setTodoList((prev) => [...prev, novaTarefaNoServidor]);
+      if (!resposta.ok) throw new Error("Erro no servidor");
 
-    event.currentTarget.reset();
-    setFilter("all");
+      const novaTarefaNoServidor = await resposta.json();
+
+      // Atualiza a tela
+      setTodoList((prev) => [...prev, novaTarefaNoServidor]);
+
+      // USA A VARIÁVEL 'form' PARA RESETAR
+      form.reset();
+      setFilter("all");
+    } catch (err) {
+      console.error("Erro ao adicionar tarefa:", err);
+    }
   };
 
   // Avisa o servidor para deletar via DELETE
