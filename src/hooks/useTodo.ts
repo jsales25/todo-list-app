@@ -74,7 +74,6 @@ export const useTodo = () => {
     }
   };
 
-  // --- ESSAS FUNÇÕES TINHAM SUMIDO E VOLTARAM AGORA ---
   const filteredTodos = todoList.filter((todo) => {
     if (filter === "active") return !todo.completed;
     if (filter === "completed") return todo.completed;
